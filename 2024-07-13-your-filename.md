@@ -24,7 +24,8 @@ With zero trust in place, customer data is
 isolated from other customers sharing the same server machines. This means that although
 different customers share the same infrastructure, they’re unable to access each other’s data.
 
-
+security
+https://cloud.google.com/static/docs/security/infrastructure/design/resources/google_infrastructure_whitepaper_fa.pdf
 
 
 
