@@ -17,6 +17,20 @@ us-east-1a is an Availability Zone in us-east-1 (N. Virginia Region).
 There are over 200 AWS services available. Some services might not be available in some Regions. Depending on the AWS service that you use, your resources are either deployed at the Availability Zone, Region, or Global level. Edge locations are global locations where content is cached. Amazon CloudFront delivers your content through a worldwide network of edge locations.
 
 
+Every action that you make in AWS is an API call that is authenticated and authorized.  In AWS, you can make API calls to services and resources through the AWS Management Console, AWS Command Line Interface (AWS CLI), or AWS Software Development Kits.
+
+AWS Management Console
+One way to manage cloud resources is through the web-based console, where you log in and choose the desired service. This can be the easiest way to create and manage resources when you first begin working with the cloud. The following is a screenshot that shows the landing page when you first log in to the console. 
+
+AWS CLI
+The AWS CLI is a unified tool that you can use to manage AWS services. You can download and configure one tool that you can use to control multiple AWS services from the command line, and automate them with scripts. The AWS CLI is open source, and installers are available for Windows, Linux, and macOS. Consider the scenario where you run many servers on AWS for your application’s frontend. You want to run a report to collect data from all the servers. You need to do this programmatically every day because the server details might change. Instead of manually logging in to the console and then copying and pasting information, you can schedule an AWS CLI script with an API call to pull this data for you.
+
+AWS SDKs
+
+API calls to AWS can also be performed by running code with programming languages. You can do this by using AWS SDKs. SDKs are open source and maintained by AWS for the most popular programming languages, such as C++, Go, Java, JavaScript, .NET, Node.js, PHP, Python, Ruby, Rust, and Swift.
+
+Developers commonly use AWS SDKs to integrate their application source code with AWS services. For example, consider an application with a frontend that runs in Python. Every time the application receives a photo, it uploads the file to a storage service. This action can be achieved in the source code by using the AWS SDK for Python (Boto3).
+
 
 Best practices
 A well-known best practice for cloud architecture is to use Region-scoped, managed services. Replicate workload across multiple availability zones, at least two. That way, if an Availability Zone fails, your application will have infrastructure up and running in a second Availability Zone to take over the traffic.
@@ -39,3 +53,10 @@ List of AWS Services Available by Region: https://aws.amazon.com/about-aws/globa
 
 AWS whitepaper: https://aws.amazon.com/products/
 https://docs.aws.amazon.com/pdfs/whitepapers/latest/aws-overview/aws-overview.pdf
+
+What Is the AWS Management Console?https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/what-is.html
+
+AWS Command Line Interface: https://aws.amazon.com/cli/
+
+AWS SDK for Python (Boto3): 
+https://aws.amazon.com/sdk-for-python/?pg=developertools
