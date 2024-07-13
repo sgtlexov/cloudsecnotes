@@ -487,8 +487,6 @@ AWS Incident Response Videos
 https://www.youtube.com/user/AmazonWebServices/search
 
 AWS Well-Architected Tool User Guide
-
-
 https://docs.aws.amazon.com/pdfs/wellarchitected/latest/userguide/wellarchitected-ug.pdf
 
 Amazon CloudWatch Events
