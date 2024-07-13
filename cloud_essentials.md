@@ -130,3 +130,6 @@ This allows developers to seamlessly replace outdated or insecure container imag
 ### The shared responsibility model
 With the shared responsibility model, these responsibilities get shared between the cloud provider and the customer. Physical security, power, cooling, and network connectivity are the responsibility of the cloud provider. The customer is responsible for the data and information stored in the cloud. Devices that are allowed to connect to your cloud (cell phones, computers, and so on)
 The accounts and identities of the people, services, and devices within your organization.
+
+Refrences
+Google: https://cloud.google.com/learn/advantages-of-cloud-computing
