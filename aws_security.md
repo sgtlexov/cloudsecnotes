@@ -251,6 +251,19 @@ consider managing employee identity information through an identity provider (Id
 You might have IAM users, roles, permissions, policies, or credentials that you are no longer using in your account. IAM provides last accessed information to help you identify irrelevant credentials that you no longer need so that you can remove them. This helps you reduce the number of users, roles, permissions, policies, and credentials that you have to monitor.
 
 
+
+## AWS Shared Responsibility Model
+
+Security is a shared responsibility between you and AWS. 
+
+AWS is responsible for protecting the global infrastructure that runs all of the services offered in the AWS Cloud. This infrastructure comprises the hardware, software, networking, and facilities that run AWS services.
+
+As an AWS customer, you are responsible for securing your data, operating systems, networks, platforms, and other resources that you create in the AWS Cloud. You are responsible for protecting the confidentiality, integrity, and availability of your data and for meeting any specific business and/or compliance requirements for your workloads.
+
+
+https://aws-media.tutorialsdojo.com/secfun_en_m1_3.0.0/assets/r27sGE6PjFpVD2UG_ni96Fiiy3vD7izIn.png
+
+
 https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1720890000/6_W6AgtssnL6bKS1FN-TRA/tincan/7b5246b3e4dcf41ee9510fd1863163b18f6b0358/assets/XzQ6ItNPDmtH_jWs_WXZ1hMonELN5HDwI.png
 
 Refrences
