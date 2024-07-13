@@ -87,3 +87,6 @@ AWS SDK for Python (Boto3):
 https://aws.amazon.com/sdk-for-python/?pg=developertools
 
 AWS Shared Responsibility Model: https://aws.amazon.com/compliance/shared-responsibility-model/
+
+Cloud Adoption Framework - Security:
+https://d1.awsstatic.com/whitepapers/AWS_CAF_Security_Perspective.pdf
