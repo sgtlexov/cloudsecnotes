@@ -315,7 +315,7 @@ Access management for AWS resources: https://docs.aws.amazon.com/en_us/IAM/lates
 Security best practices in IAM: https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html
 
 
-AWS Compliance Programs:
+AWS Best Practices for DDoS Resiliency:
 https://aws.amazon.com/compliance/programs/
 
 AWS Compliance Center: https://aws.amazon.com/financial-services/security-compliance/compliance-center/?country-compliance-center-cards.sort-by=item.additionalFields.headline&country-compliance-center-cards.sort-order=asc&awsf.country-compliance-center-master-filter=*all
@@ -325,5 +325,6 @@ Compliance Best Practices and Workbooks: https://aws.amazon.com/compliance/resou
 AWS CIS Foundations Benchmark:
 https://d1.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf
 
+AWS service endpoints: https://docs.aws.amazon.com/general/latest/gr/rande.html#ct_region
 
 https://aws.amazon.com/blogs/security/how-to-create-and-manage-users-within-aws-sso/
