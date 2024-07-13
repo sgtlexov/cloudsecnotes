@@ -31,16 +31,35 @@ API calls to AWS can also be performed by running code with programming language
 
 Developers commonly use AWS SDKs to integrate their application source code with AWS services. For example, consider an application with a frontend that runs in Python. Every time the application receives a photo, it uploads the file to a storage service. This action can be achieved in the source code by using the AWS SDK for Python (Boto3).
 
+## Security and the AWS Shared Responsibility Model
 
-Best practices
+When you work with the AWS Cloud, managing security and compliance is a shared responsibility between AWS and you. To depict this shared responsibility, AWS created the shared responsibility model.
+https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1720890000/6_W6AgtssnL6bKS1FN-TRA/tincan/7b5246b3e4dcf41ee9510fd1863163b18f6b0358/assets/G7jsXz1OeUet0P4d_VQj8P7tpf4Xy4mAS.png
+
+## AWS Responsibility
+AWS is responsible for security of the cloud. This means that AWS protects and secures the infrastructure that runs the services offered in the AWS Cloud. AWS is responsible for the following:
+
+Protecting and securing AWS Regions, Availability Zones, and data centers, down to the physical security of the buildings
+Managing the hardware, software, and networking components that run AWS services, such as the physical servers, host operating systems, virtualization layers, and AWS networking components
+The level of responsibility that AWS has depends on the service. AWS classifies services into two categories. The following table provides information about each, including the AWS responsibility.
+
+## Customer responsibility
+
+Customers are responsible for security in the cloud. When using any AWS service, the customer is responsible for properly configuring the service and their applications, in addition to ensuring that their data is secure.
+
+The customers' level of responsibility depends on the AWS service. Some services require the customer to perform all the necessary security configuration and management tasks. Other more abstracted services require customers to only manage the data and control access to their resources. Using the two categories of AWS services, customers can determine their level of responsibility for each AWS service that they use.
+A key concept is that customers maintain complete control of their data and are responsible for managing the security related to their content. For example, you are responsible for the following:
+
+- Choosing a Region for AWS resources in accordance with data sovereignty regulations
+- Implementing data-protection mechanisms, such as encryption and scheduled backups
+- Using access control to limit who can access your data and AWS resour
+
+## Best practices
 A well-known best practice for cloud architecture is to use Region-scoped, managed services. Replicate workload across multiple availability zones, at least two. That way, if an Availability Zone fails, your application will have infrastructure up and running in a second Availability Zone to take over the traffic.
 
 If your application is sensitive to latency (the delay between a request for data and the response), choose a Region that is close to your user base. This helps prevent long wait times for your customers.
 
-
-
-
-
+Due to the varying levels of effort, customers must consider which AWS services they use and review the level of responsibility required to secure each service. They must also review how the AWS shared responsibility model aligns with the security standards in their IT environment in addition to any applicable laws and regulations.
 
 
 
@@ -60,3 +79,5 @@ AWS Command Line Interface: https://aws.amazon.com/cli/
 
 AWS SDK for Python (Boto3): 
 https://aws.amazon.com/sdk-for-python/?pg=developertools
+
+AWS Shared Responsibility Model: https://aws.amazon.com/compliance/shared-responsibility-model/
