@@ -80,8 +80,6 @@ The cloud provider maintains the physical infrastructure, physical security, and
 
 ### Software as a service (SaaS)
 (SaaS) delivers a full application stack as a service, from underlying infrastructure to maintenance and updates to the app software itself. A SaaS solution is often an end-user application, where both the service and the infrastructure is managed and maintained by the cloud service provider. With SaaS, the customer is essentially renting or using a fully developed application. For example, Email, financial software, messaging applications, and connectivity software are all common examples of a SaaS implementation.  SaaS is the model that places the most responsibility with the cloud provider and the least responsibility with the user. In a SaaS environment you’re responsible for the data that you put into the system, the devices that you allow to connect to the system, and the users that have access. 
- 
-
 
 
 ### The shared responsibility model
