@@ -43,9 +43,14 @@ Private clouds: are built, managed, and owned by a single organization and priva
 Public cloud: A public cloud is built, controlled, and maintained by a third-party cloud provider. They offer compute, storage, and network resources over the internet, enabling companies to access shared on-demand resources based on their unique requirements and business goals. Public cloud is a multi-tenant environment where data
 is spread across the shared public infrastructure. 
 
-hypervisor
-With zero trust in place, customer data is
-isolated from other customers sharing the same server machines. This means that although
+Foundation of Cloud Computing
+Virtualization is the foundation of cloud computing. Virtualization is the technology that creates a virtual version of physical infrastructure, such as servers, storgae, networks. They use virtual mchines. This technology uses virtual machines to simulate a physical computer. Virtual machines contain their own operating systems like windows or linux, and use only portion of the underlying computer;s power. Virtualization uses hypervisors to manage the relationship between physical and virtual resources. A hypervisor is the abstraction layer that sits between the physical computer and virtal machine. Abstraction is what separates hardware and software. 
+
+Types of hypervisors
+
+- Type one also known as bare metal. It replaces the entire operating system of the underlying computer.Type one hypervisors interact with the operating system’s components directly. Having this direct access makes type one streamlined and secure. On the flip side, type two hypervisors, also known as hosted, use the computer’s existing operating system and runs as an application over the operating system.
+Type two hypervisors may be easier to install, but you need to take into consideration the extra overhead and security needs of the underlying operating system. So, hypervisors distribute resources across VMs and keep VMs separate so that each one simulates an individual computer.
+And the hypervisor ensures that customer data is isolated from other customers sharing the same server machines. This means that although
 different customers share the same infrastructure, they’re unable to access each other’s data.
 
 security
