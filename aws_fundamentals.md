@@ -69,6 +69,9 @@ Due to the varying levels of effort, customers must consider which AWS services 
 
 
 References
+AWS Cloud Essentials:
+https://aws.amazon.com/getting-started/cloud-essentials/
+    
 AWS Regions and Availability Zones: https://aws.amazon.com/about-aws/global-infrastructure/regions_az/
 
 List of AWS Services Available by Region: https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/
