@@ -53,6 +53,8 @@ Type two hypervisors may be easier to install, but you need to take into conside
 And the hypervisor ensures that customer data is isolated from other customers sharing the same server machines. This means that although
 different customers share the same infrastructure, they’re unable to access each other’s data.
 
+
+
 security
 https://cloud.google.com/static/docs/security/infrastructure/design/resources/google_infrastructure_whitepaper_fa.pdf
 
