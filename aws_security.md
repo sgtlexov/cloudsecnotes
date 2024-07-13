@@ -371,6 +371,60 @@ Application and OS Security
 Securing your network and making sure that all of your servers are hardened and properly patched are some of the tasks required in infrastructure security.  AWS Systems Manager consists of a collection of capabilities that helps you automate management tasks such as collecting system inventory, applying operating system patches, maintaining up-to-date anti-virus definitions, and configuring operating systems and applications at scale. Systems Manager helps keep your systems compliant with your defined configuration policies.
 
 
+Data Protection
+Protection at Rest
+
+Protecting data at rest has to do with encrypting data while using one of our storage services, including our database services. When it comes to Amazon S3, for example, there are two types of encryption options available:  
+Protection in Transit
+
+Any data that gets transmitted from one system to another is considered to be data in transit. AWS recommends the following solutions and best practices to help you provide the appropriate level of protection for your data in transit, including the confidentiality and integrity of your application’s data.
+
+
+AWS services provide HTTPS endpoints using TLS for communication, thus providing end-to-end encryption when communicating with the AWS APIs.
+
+
+Use AWS to generate, deploy, and manage public and private certificates used for TLS encryption in web-based workloads.
+
+
+Leverage IPsec with VPN connectivity into AWS to facilitate encryption of traffic.
+
+Incident Response
+There are obvious differences between environments built to run in the cloud and environments running on-premises. When it comes to incident response, the same can be said.  Incident response in the AWS Cloud is faster, cheaper, more effective, and simpler to manage.  Your ability to detect, react, and recover can be significantly enhanced with AWS.
+
+The Power of APIs for Automation
+In AWS you can use APIs to automate many of the routine tasks that need to be performed during incident response. For example, you can isolate an instance by changing the security groups associated with the instance via APIs from a single command. 
+
+Performing Forensics on Data Volumes
+Forensics often requires capturing the disk image or "as-is" configuration of an operating system. You can use Amazon EBS snapshots and the Amazon EC2 APIs to capture the data and state of systems under investigation.
+
+Operating in a Clean Room
+AWS CloudFormation can be used to quickly create a new, trusted environment in which to conduct deeper investigation. CloudFormation can pre-configure instances in an isolated environment that contains all the necessary tools forensic teams need to determine the cause of the incident.
+
+AWS Well-Architected Tool
+The AWS Well-Architected tool is a self-service tool that is designed to help customers review AWS workloads at any time, without the need for an AWS Solutions Architect. By using this tool, you can review your workloads using a consistent process, understand potential risks in your workload architectures, and identify next steps for improvement. 
+
+How it works
+
+First you define your workload, and then answer a set of questions across the five pillars of the Well Architected Framework: Operational Excellence, Security, Reliability, Performance Efficiency, and Cost Optimization. The AWS Well-Architected Tool will then provide a plan describing the improvements that can be applied to the workload. There’s no charge for the AWS Well-Architected Tool; you pay only for any AWS resources that you consume.  However, the tool in only available in select regions. Visit the FAQs for more information.
+
+https://aws-media.tutorialsdojo.com/secfun_en_m1_3.0.0/assets/kdM-_M0wD1lw8l2j_I40HPpYGrzQ6eXZa.png
+
+Form from the AWS Well-Architected tool console used to define a workload.
+Form from the AWS Well-Architected tool console 
+
+used to define a workload.
+
+
+
+
+
+
+
+
+https://aws-media.tutorialsdojo.com/secfun_en_m1_3.0.0/assets/7blxr_7H5b7eCOfp_nXbIV9HwLGVRjYfe.png
+
+
+
 
 
 
@@ -426,6 +480,16 @@ AWS service endpoints: https://docs.aws.amazon.com/general/latest/gr/rande.html#
 Detection: https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/detection.html
 
 AWS Security Documentation: https://docs.aws.amazon.com/security/
+
+Building a Cloud-Specific Incident Response Plan: https://aws.amazon.com/blogs/publicsector/building-a-cloud-specific-incident-response-plan/
+
+AWS Incident Response Videos
+https://www.youtube.com/user/AmazonWebServices/search
+
+AWS Well-Architected Tool User Guide
+
+
+https://docs.aws.amazon.com/pdfs/wellarchitected/latest/userguide/wellarchitected-ug.pdf
 
 Amazon CloudWatch Events
 https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-tutorial.html
