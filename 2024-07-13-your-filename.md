@@ -42,12 +42,16 @@ Azure - 2010
 Oracle Cloud
 IBM Cloud
 
+Cloud service models
+### Infrastructure as a service (IaaS):
+on-demand access to compute, storage, networking, and virtualization
 
-Cloud service types
-### Infrastructure as a service (IaaS)
+
 Cloud provider is responsible for maintaining the hardware, network connectivity (to the internet), and physical security. Customer is responsible for everything else: operating system installation, configuration, and maintenance; network configuration; database and storage configuration, etc. The customer is bascically renting the hardware in a cloud datacenter but the customer decides what to do with it.
 
-### Platform as a service (PaaS).
+### Platform as a service (PaaS): 
+hardware and software resources needed for cloud application development
+
 The cloud provider maintains the physical infrastructure, physical security, and connection to the internet. They also maintain the operating systems, middleware, development tools, and business intelligence services that make up a cloud solution. The customer don't have to worry about the licensing or patching for operating systems and databases.
 
 This is most suited to a lift and shift migration from an on-premise datacenters to a cloud development.
@@ -56,8 +60,20 @@ Why do we need cloud computing?
 Prior to the advent of cloud computing, most ccomputing is done in an on-premises datacenter. Which means the customer is responsible for the physical security to the information and data security in their datacenter. 
 
 ### Software as a service (SaaS)
+full-application stack as a cloud service, including the maintenance and management from underlying infrastructure to application software
+
+
 With SaaS, the customer is essentially renting or using a fully developed application. For example, Email, financial software, messaging applications, and connectivity software are all common examples of a SaaS implementation.  SaaS is the model that places the most responsibility with the cloud provider and the least responsibility with the user. In a SaaS environment you’re responsible for the data that you put into the system, the devices that you allow to connect to the system, and the users that have access. 
 
-Shared responsiiblity model
-The shared responsibility model applies to all the cloud types. 
+Benefits of Cloud Computing
+- Faster time to market: Cloud computing supports new innovations by making it easy to test new ideas and design new applications without hardware limitations or slow procurement processes. Developers can spin up new instances or retire them in seconds, allowing them to accelerate development with quick deployments.
 
+- Scalability and flexibility: Companies don’t need to pay for or build the infrastructure needed to support their highest load levels. Likewise, they can quickly scale down if resources aren’t being used. Cloud computing gives your business more flexibility. You can quickly scale resources and storage up to meet business demands without having to invest in physical infrastructure.
+
+Cost savings: Whatever cloud service model you choose, you only pay for the resources you actually use. This helps you avoid overbuilding and overprovisioning your data center and gives your IT teams back valuable time to focus on more strategic work. 
+
+Better collaboration: Cloud storage enables you to make data available anywhere you are, anytime you need it. Instead of being tied to a location or specific device, people can access data from anywhere in the world from any device—as long as they have an internet connection.
+
+Advanced security: Cloud computing can actually strengthen your security posture because of the depth and breadth of security features, automatic maintenance, and centralized management.
+
+Data loss prevention: Cloud providers offer backup and disaster recovery features. Storing data in the cloud rather than locally can help prevent data loss in the event of an emergency, such as hardware malfunction, malicious threats, or even simple user error. 
