@@ -90,3 +90,5 @@ AWS Shared Responsibility Model: https://aws.amazon.com/compliance/shared-respon
 
 Cloud Adoption Framework - Security:
 https://d1.awsstatic.com/whitepapers/AWS_CAF_Security_Perspective.pdf
+
+AWS Global Infrastructure: https://aws.amazon.com/about-aws/global-infrastructure/
