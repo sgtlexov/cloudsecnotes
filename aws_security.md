@@ -50,6 +50,9 @@ However, sometimes a user’s password is easy to guess. For example, your cowor
 
 Using MFA adds an additional layer of security because it requires users to use a supported MFA mechanism in addition to their regular sign-in credentials. Activating MFA on the AWS root user account is an AWS best practice.
 
+
+AWS supports a variety of MFA mechanisms, such as virtual MFA devices, hardware time-based one-time password (TOTP) tokens, and FIDO security keys. Microsoft Authenticator, Google Authenticator
+
 https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1720890000/6_W6AgtssnL6bKS1FN-TRA/tincan/7b5246b3e4dcf41ee9510fd1863163b18f6b0358/assets/iH60qyuGvWpWH0pz_ae3D9Goxf5poTU_J.png
 
 
@@ -57,8 +60,11 @@ https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1720890000/6
 
 
 
-
-
-
-
 https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1720890000/6_W6AgtssnL6bKS1FN-TRA/tincan/7b5246b3e4dcf41ee9510fd1863163b18f6b0358/assets/6jTnHGzFpim42ZCZ_YD5J2pBrmA9lGqT-.png
+
+Refrences
+Enabling a virtual multi-factor authentication (MFA) device (console): https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html
+
+Multi-Factor Authentication (MFA) for IAM: https://aws.amazon.com/iam/features/mfa/
+
+Tasks that require root user credentials: https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-tasks.html
