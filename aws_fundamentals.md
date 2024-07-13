@@ -11,7 +11,7 @@ Inside every Region is a cluster of Availability Zones. An Availability Zone con
 
 Availability Zones also have code names. Because they are located inside Regions, they can be addressed by appending a letter to the end of the Region code name. Here are examples of Availability Zone codes:
 
-us-east-1a is an Availability Zone in us-east-1 (N. Virginia Region).
+us-east-1a is an Availability Zone in us-east-1 (N. Virginia Region). The four main factors that you should take into consideration when choosing a Region is Latency, price, service availability, and compliance
 
 ## Scope of AWS Services
 There are over 200 AWS services available. Some services might not be available in some Regions. Depending on the AWS service that you use, your resources are either deployed at the Availability Zone, Region, or Global level. Edge locations are global locations where content is cached. Amazon CloudFront delivers your content through a worldwide network of edge locations.
