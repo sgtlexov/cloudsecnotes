@@ -123,7 +123,8 @@ Google’s Cloud Functions is a serverless product that
 
 Cointainer: container is a software package that holds only the components necessary to execute a particular application. Each container has a container image, which is a file with the code and dependencies that the container requires to run the application. Developers use something called container registries to upload and download container images.
 This enables teams to share and deploy consistent images. And organizations use orchestration tools to help deploy, scale, manage, and monitor containers.
-Packaging software in a container uses less memory and fewer resources because the operating system itself is not included in the container.
+Packaging software in a container uses less memory and fewer resources because the operating system itself is not included in the container. If a container does require a change, users must create a new container image and redeploy it.
+This allows developers to seamlessly replace outdated or insecure container images.Immutability makes containers more secure by ensuring consistency across multiple deployments since there is no patching or updating that could cause configuration drifts.
 
 
 ### The shared responsibility model
