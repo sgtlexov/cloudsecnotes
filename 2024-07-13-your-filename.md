@@ -88,6 +88,41 @@ The cloud provider maintains the physical infrastructure, physical security, and
 ### Software as a service (SaaS)
 (SaaS) delivers a full application stack as a service, from underlying infrastructure to maintenance and updates to the app software itself. A SaaS solution is often an end-user application, where both the service and the infrastructure is managed and maintained by the cloud service provider. With SaaS, the customer is essentially renting or using a fully developed application. For example, Email, financial software, messaging applications, and connectivity software are all common examples of a SaaS implementation.  SaaS is the model that places the most responsibility with the cloud provider and the least responsibility with the user. In a SaaS environment you’re responsible for the data that you put into the system, the devices that you allow to connect to the system, and the users that have access. 
 
+Serverless computing: is a cloud computing model where servers are abstracted from development. The
+servers and resources are completely managed by the cloud service provider (CSP). This
+allows developers to focus on creating and deploying code without worrying about backend
+infrastructure
+
+Serverless computing is delivered in two main cloud service models: backend as a service
+(BaaS) and function as a service (FaaS).
+BaaS is a form of serverless computing where the CSP manages all aspects of the backend
+infrastructure. This includes servers, containers, and virtual machines. Developers use BaaS to
+speed the creation of web applications. With BaaS, developers can focus on writing the front
+end code, which is the code that builds the user interface. Organizations have access to other
+services, like databases, file storage, and authentication services that can be native or third
+party to the platform
+
+FaaS is a form of serverless computing that runs functions. A function is a small piece of code.
+Functions are ephemeral, meaning they only exist for a short period of time. Developers can
+use their choice of programming language to create functions, which makes adopting
+serverless computing more convenient.
+
+examples
+You’re collaborating with the development team to
+create an application, and you want to be notified when a security vulnerability appears. You
+create and run a function that will trigger an email whenever one of these flags surface. That
+way, you’re instantly notified of any immediate security concerns.
+ A company chooses an event, like a customer signing up to join their website. Once the
+customer submits their sign-up request, they receive an email welcoming them to the website.
+1
+In this example, the customer signing up triggered a function to send the email. The function
+only lived for the amount of time it took to trigger the email. Once the email was sent, the
+function expired.
+Google’s Cloud Functions is a serverless product that
+
+
+Cointainer: container is a software package that holds only the components necessary to execute a particular application.
+
 
 ### The shared responsibility model
 With the shared responsibility model, these responsibilities get shared between the cloud provider and the customer. Physical security, power, cooling, and network connectivity are the responsibility of the cloud provider. The customer is responsible for the data and information stored in the cloud. Devices that are allowed to connect to your cloud (cell phones, computers, and so on)
