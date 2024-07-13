@@ -260,6 +260,11 @@ AWS is responsible for protecting the global infrastructure that runs all of the
 
 As an AWS customer, you are responsible for securing your data, operating systems, networks, platforms, and other resources that you create in the AWS Cloud. You are responsible for protecting the confidentiality, integrity, and availability of your data and for meeting any specific business and/or compliance requirements for your workloads.
 
+## DDoS Mitigation
+A combination of AWS services may be used to implement a defense in depth strategy when it comes to DDoS attacks. These services are designed with an automatic response to DDoS attacks and can help minimize time to mitigate and reduce impact. AWS Edge locations provide an additional layer of network infrastructure that increases your ability to absorb DDoS attacks and to isolate faults while minimizing availability impact. Edge locations are physical data centers located in key cities, that are different from Availability Zones. As access to certain data increases with time, this data is copied to an edge location near your customer base for better performance and latency. Threats can then be taken care of at these edge locations, away from your web applications, AWS resources, and the original data.
+
+
+
 # Compliance and Governance
 AWS communicates about its security and control environment to customers by:
 
