@@ -349,10 +349,35 @@ Auditing on AWS
 
 The AWS Management console, along with the AWS CLI, can produce powerful results for auditors across multiple regulatory, standards, and industry authorities. The key services to audit include Amazon S3, Elastic Load Balancing, Amazon CloudWatch, AWS CloudTrail, and Amazon VPC.  View each flashcard below for more information.
 
+Infrastructure Protection
+Protection via Isolation
+
+Infrastructure protection ensures that systems and resources within your workloads are protected against unintended and unauthorized access, and other potential vulnerabilities. Amazon Virtual Private Cloud (VPC) allows you to isolate your AWS resources in the cloud. A VPC enables you to launch resources into a virtual network that you've defined and that closely resembles a traditional network that you'd operate in your own data center. 
+
+
+most common VPC features that provide a defense-in-depth approach for your resources.
+Subnet Routing
+Subnets enable you to group instances and AWS resources based on your security and operational needs. You can have all instances launched in a subnet to receive a public IPv4 address, or an IPv6 address, or both. A subnet also allows you to configure routing for your network. With routing you can specify targets for your resources and whether or not your resources can be reached via the Internet
+
+Network ACLs
+To further add a layer of security within your VPC, you can configure network ACLs. A network access control list (ACL) is an optional layer of security for your VPC that acts as a firewall for controlling traffic at the subnet level. Your VPC automatically comes with a modifiable default network ACL. By default, it allows all inbound and outbound IP traffic. To control traffic you will need to add ALLOW and DENY rules for specific IP addresses,  protocols, and ports.
+
+Security Group
+A security group acts as a virtual firewall for your instance to control inbound and outbound traffic. When you launch an instance in a VPC, you must specify a security group for the instance. For each security group, you add rules that control the inbound traffic to instances and a separate set of rules that control the outbound traffic. Security groups are stateful: responses to allowed inbound traffic are allowed to flow outbound regardless of outbound rules, and vice versa. No inbound traffic is allowed until you configure inbound rules to your desired security group. Traffic can be restricted by IP protocol, service port, and source/destination IP address.
+
+
+Application and OS Security
+
+Securing your network and making sure that all of your servers are hardened and properly patched are some of the tasks required in infrastructure security.  AWS Systems Manager consists of a collection of capabilities that helps you automate management tasks such as collecting system inventory, applying operating system patches, maintaining up-to-date anti-virus definitions, and configuring operating systems and applications at scale. Systems Manager helps keep your systems compliant with your defined configuration policies.
 
 
 
 
+
+
+
+
+https://aws-media.tutorialsdojo.com/secfun_en_m1_3.0.0/assets/haR80C0m7pGDNBLS_m8eSaGd5sjZRRLLM.png
 
 
 
@@ -400,6 +425,7 @@ AWS service endpoints: https://docs.aws.amazon.com/general/latest/gr/rande.html#
 
 Detection: https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/detection.html
 
+AWS Security Documentation: https://docs.aws.amazon.com/security/
 
 Amazon CloudWatch Events
 https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-tutorial.html
