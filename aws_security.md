@@ -1,6 +1,6 @@
 ## Design Principles
 
-In the cloud, there are a number of principles that can help you strengthen your security. Use the principles described below to help guide your conversation around security and compliance. Click on each principle below for more information.
+In the cloud, there are a number of principles that can help you strengthen your security. Use the principles described below to help guide your conversation around security and compliance. 
 
 Implement a strong identity foundation
 Enable traceability: Implement the principle of least privilege and enforce separation of duties with appropriate authorization for each interaction with your AWS resources.
@@ -260,6 +260,30 @@ AWS is responsible for protecting the global infrastructure that runs all of the
 
 As an AWS customer, you are responsible for securing your data, operating systems, networks, platforms, and other resources that you create in the AWS Cloud. You are responsible for protecting the confidentiality, integrity, and availability of your data and for meeting any specific business and/or compliance requirements for your workloads.
 
+# Compliance and Governance
+AWS communicates about its security and control environment to customers by:
+
+
+Obtaining industry certifications and independent third-party attestations.
+
+
+Publishing information about AWS security and control practices in whitepapers and website content.
+
+
+Providing certificates, reports, and other documentation directly to AWS customers under an NDA (as required).
+
+
+Providing security features and enablers, including compliance playbook and mapping documents for compliance programs.
+
+
+
+Customers can't visit AWS data centers to see how they are secured, however, AWS engages with external certifying bodies and independent auditors to provide customers with considerable information regarding the policies, processes, and controls established and operated by AWS.
+
+
+Running your workloads on AWS does not automatically make the workload compliant. It is your responsibility to ensure that your workload meets all the requirements established in the compliance standard. However, AWS is already certified for its infrastructure, you only have to certify the applications and architectures you create.
+
+
+
 
 https://aws-media.tutorialsdojo.com/secfun_en_m1_3.0.0/assets/r27sGE6PjFpVD2UG_ni96Fiiy3vD7izIn.png
 
@@ -284,6 +308,17 @@ How IAM works: https://docs.aws.amazon.com/en_us/IAM/latest/UserGuide/intro-stru
 Access management for AWS resources: https://docs.aws.amazon.com/en_us/IAM/latest/UserGuide/access.html
 
 Security best practices in IAM: https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html
+
+
+AWS Compliance Programs:
+https://aws.amazon.com/compliance/programs/
+
+AWS Compliance Center: https://aws.amazon.com/financial-services/security-compliance/compliance-center/?country-compliance-center-cards.sort-by=item.additionalFields.headline&country-compliance-center-cards.sort-order=asc&awsf.country-compliance-center-master-filter=*all
+
+Compliance Best Practices and Workbooks: https://aws.amazon.com/compliance/resources/
+
+AWS CIS Foundations Benchmark:
+https://d1.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf
 
 
 https://aws.amazon.com/blogs/security/how-to-create-and-manage-users-within-aws-sso/
