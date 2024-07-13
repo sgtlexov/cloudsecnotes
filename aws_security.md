@@ -1,3 +1,22 @@
+## Design Principles
+
+In the cloud, there are a number of principles that can help you strengthen your security. Use the principles described below to help guide your conversation around security and compliance. Click on each principle below for more information.
+
+Implement a strong identity foundation
+Enable traceability: Implement the principle of least privilege and enforce separation of duties with appropriate authorization for each interaction with your AWS resources.
+
+Enable traceability: Monitor, alert, and audit actions and changes to your environment in real time. Integrate logs and metrics with systems to automatically respond and take action.
+
+Automate security best practices: Automated software-based security mechanisms improve your ability to securely scale more rapidly and cost effectively. Implement controls that are defined and managed as code in version-controlled templates.
+
+Apply security at all layers: Rather than just focusing on protection of a single outer layer, apply a defense-in-depth approach with other security controls.
+
+Protect data in transit and at rest: Classify your data into sensitivity levels and use mechanisms, such as encryption and access control, where appropriate.
+
+Keep people away from data: Reduce or eliminate the need for direct access or manual processing of data. This reduces the risk of loss or modification and human error when handling sensitive data.
+
+Prepare for security events: Prepare for an incident by having an incident management process that aligns to your organizational requirements. Run incident response simulations and use tools with automation to increase your speed for detection, investigation, and recovery.
+
 ## AWS root user
 
 When you first create an AWS account, you begin with a single sign-in identity that has complete access to all AWS services and resources in the account. This identity is called the AWS root user and is accessed by signing in with the email address and password that were used to create the account. 
@@ -124,7 +143,7 @@ When you create an IAM user, you can grant permissions directly at the user leve
 Fortunately, you can group IAM users and attach permissions at the group level.
 
 
-IAM groups
+## IAM groups
 
 An IAM group is a collection of users. All users in the group inherit the permissions assigned to the group. This makes it possible to give permissions to multiple users at once. It’s a more convenient and scalable way of managing permissions for users in your AWS account. This is why using IAM groups is a best practice.
 
@@ -153,7 +172,7 @@ The root user can perform all actions on all resources inside an AWS account by 
 
 The way you grant permissions in IAM is by using IAM policies.
 
-IAM policies
+## IAM policies
 
 To manage access and provide permissions to AWS services and resources, you create IAM policies and attach them to an IAM identity. Whenever an IAM identity makes a request, AWS evaluates the policies associated with them. For example, if you have a developer inside the developers group who makes a request to an AWS service, AWS evaluates any policies attached to the developers group and any policies attached to the developer user to determine if the request should be allowed or denied.
 
@@ -205,12 +224,12 @@ This policy uses a Deny effect to block access to Amazon S3 actions, unless the 
 
 
 
-IAM roles
+## IAM roles
 All right, so you've learned about IAM users, groups, and policies. Policies can be applied to AWS identities like users and groups to assign permissions. They also, however, can be applied to another AWS identity, IAM roles. An IAM role is an identity that can be assumed by someone or something who needs temporary access to AWS credentials. 
 IAM roles are identities in AWS that like an IAM user also have associated AWS credentials used to sign requests. However, IAM users have usernames and passwords as well as static credentials whereas IAM roles do not have any login credentials like a username and password and the credentials used to sign requests are programmatically acquired, temporary in nature, and automatically rotated. A role can be assumed by many different identities and they have many use cases. The important thing to know about roles is that the credentials they provide expire and roles are assumed programmatically. Another identity that can assume an IAM role to gain access to AWS is external identity providers, AWS assigns a role to a federated user when access is requested through an identity provider. We also have AWS services that can make this process easier such as AWS IAM Identity Center. 
 
 
-IAM best practices
+## IAM best practices
 The root user is an all-powerful and all-knowing identity in your AWS account. If a malicious user were to gain control of root-user credentials, they would be able to access every resource in your account, including personal and billing information. To lock down the root user, you can do the following:
 
 Don’t share the credentials associated with the root user.
