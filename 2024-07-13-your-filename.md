@@ -22,7 +22,7 @@ Hybrid cloud: A hybrid cloud is a computing environment that uses both public an
 
 Multi-cloud:  In a multi-cloud scenario, you use multiple public cloud providers. Maybe you use different features from different cloud providers. Or maybe you started your cloud journey with one provider and are in the process of migrating to a different provider. Regardless, in a multi-cloud environment you deal with two (or more) public cloud providers and manage resources and security in both environments.
 
-### Public Cloud Providers
+### Cloud Service Providers
 AWS -2006
 GCP - 2008
 Azure - 2010
