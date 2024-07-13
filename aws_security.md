@@ -68,3 +68,154 @@ Enabling a virtual multi-factor authentication (MFA) device (console): https://d
 Multi-Factor Authentication (MFA) for IAM: https://aws.amazon.com/iam/features/mfa/
 
 Tasks that require root user credentials: https://docs.aws.amazon.com/IAM/latest/UserGuide/root-user-tasks.html
+
+## AWS Identity and Access Management
+Authentication and authorization
+
+When you configure access to any account, two terms come up frequently: authentication and authorization. Although these terms might seem basic, you must fully understand them to properly configure access management on AWS. 
+
+
+## Authentication
+
+When you create your AWS account, you use the combination of an email address and a password to verify your identity. If a user types in the correct email address and password, the system assumes the user is allowed to enter and grants them access. This is the process of authentication.
+
+Authentication ensures that the user is who they say they are. User names and passwords are the most common types of authentication. But you might also work with other forms, such as token-based authentication or biometric data, like a fingerprint. Authentication simply answers the question, “Are you who you say you are?”
+
+## Authorization
+
+After you’re authenticated and in your AWS account, you might be curious about what actions you can take. This is where authorization comes in. Authorization is the process of giving users permission to access AWS resources and services. Authorization determines whether a user can perform certain actions, such as read, edit, delete, or create resources. Authorization answers the question, “What actions can you perform?” 
+
+https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1720890000/6_W6AgtssnL6bKS1FN-TRA/tincan/7b5246b3e4dcf41ee9510fd1863163b18f6b0358/assets/yveoE-Ree5gXh1dz_wuLIgbyGCnHrkih0.png
+
+
+## What is IAM?
+AWS Identity and Access Management (IAM) is an AWS service that helps you manage access to your AWS account and resources. It also provides a centralized view of who and what are allowed inside your AWS account (authentication), and who and what have permissions to use and work with your AWS resources (authorization).
+
+With IAM, you can share access to an AWS account and resources without sharing your set of access keys or password. You can also provide granular access to those working in your account, so people and services only have permissions to the resources that they need. For example, to provide a user of your AWS account with read-only access to a particular AWS service, you can granularly select which actions and which resources in that service that they can access.
+
+## IAM features
+To help control access and manage identities in your AWS account, IAM offers many features to ensure 
+security.
+
+IAM is global and not specific to any one Region. You can see and use your IAM configurations from any Region in the AWS Management Console.
+
+IAM is integrated with many AWS services by default.
+
+You can grant other identities permission to administer and use resources in your AWS account without having to share your password and key.
+
+IAM supports MFA. You can add MFA to your account and to individual users for extra security.
+
+IAM supports identity federation, which allows users with passwords elsewhere—like your corporate network or internet identity provider—to get temporary access to your AWS account. 
+
+
+Any AWS customer can use IAM; the service is offered at no additional charge.
+
+
+## IAM user
+
+An IAM user represents a person or service that interacts with AWS. You define the user in your AWS account. Any activity done by that user is billed to your account. When you create a user, that user can sign in to gain access to the AWS resources inside your account.
+
+You can also add more users to your account as needed. For example, for your cat photo application, you could create individual users in your AWS account that correspond to the people who are working on your application. Each person should have their own login credentials to prevent sharing credentials between users.
+
+IAM user credentials
+
+An IAM user consists of a name and a set of credentials. When you create a user, you can provide them with the following types of access:
+
+Access to the AWS Management Console
+Programmatic access to the AWS CLI and AWS API
+To access the console, provide the user with a user name and password. For programmatic access, AWS generates a set of access keys that can be used with the AWS CLI and AWS API. IAM user credentials are considered permanent, which means that they stay with the user until there’s a forced rotation by admins.
+
+When you create an IAM user, you can grant permissions directly at the user level. This can seem like a good idea if you have only one or a few users. However, as the number of users increases, keeping up with permissions can become more complicated. For example, if you have 3,000 users in your AWS account, administering access and getting a top-level view of who can perform what actions on which resources can be challenging.
+
+Fortunately, you can group IAM users and attach permissions at the group level.
+
+
+IAM groups
+
+An IAM group is a collection of users. All users in the group inherit the permissions assigned to the group. This makes it possible to give permissions to multiple users at once. It’s a more convenient and scalable way of managing permissions for users in your AWS account. This is why using IAM groups is a best practice.
+
+If you have an application that you’re trying to build and you have multiple users in one account working on the application, you might organize the users by job function. For example, you might organize your IAM groups by developers, security, and admins. You could then place all your IAM users into their respective groups.
+
+This provides a way to see who has what permissions in your organization. It also helps you scale when new people join, leave, and change roles in your organization.
+
+
+
+
+
+
+
+
+
+Consider the following examples:
+
+A new developer joins your AWS account to help with your application. You create a new user and add them to the developer group, without thinking about which permissions they need.
+A developer changes jobs and becomes a security engineer. Instead of editing the user’s permissions directly, you remove them from the old group and add them to the new group that already has the correct level of access.
+Keep in mind the following features of groups:
+
+Groups can have many users.
+Users can belong to many groups.
+Groups cannot belong to groups.
+The root user can perform all actions on all resources inside an AWS account by default. This is in contrast to creating new IAM users, new groups, or new roles. To allow an IAM identity to perform specific actions in AWS, such as implement resources, you must grant the IAM user the necessary permissions.
+
+The way you grant permissions in IAM is by using IAM policies.
+
+IAM policies
+
+To manage access and provide permissions to AWS services and resources, you create IAM policies and attach them to an IAM identity. Whenever an IAM identity makes a request, AWS evaluates the policies associated with them. For example, if you have a developer inside the developers group who makes a request to an AWS service, AWS evaluates any policies attached to the developers group and any policies attached to the developer user to determine if the request should be allowed or denied.
+
+IAM policy examples
+
+Most policies are stored in AWS as JSON documents with several policy elements. 
+
+
+{
+"Version": "2012-10-17",
+"Statement": [{
+"Effect": "Allow",
+"Action": "*",
+"Resource": "*"
+}]
+}
+
+This policy has four major JSON elements: Version, Effect, Action, and Resource.
+
+The Version element defines the version of the policy language. It specifies the language syntax rules that are needed by AWS to process a policy. To use all the available policy features, include "Version": "2012-10-17" before the "Statement" element in your policies.
+The Effect element specifies whether the policy will allow or deny access. In this policy, the Effect is "Allow", which means you’re providing access to a particular resource.
+The Action element describes the type of action that should be allowed or denied. In the example policy, the action is "*". This is called a wildcard, and it is used to symbolize every action inside your AWS account.
+The Resource element specifies the object or objects that the policy statement covers. In the policy example, the resource is the wildcard "*". This represents all resources inside your AWS console.
+Putting this information together, you have a policy that allows you to perform all actions on all resources in your AWS account. This is what we refer to as an administrator policy.
+
+The next example shows a more granular IAM policy.
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "DenyS3AccessOutsideMyBoundary",
+      "Effect": "Deny",
+      "Action": [
+        "s3:*"
+      ],
+      "Resource": "*",
+      "Condition": {
+        "StringNotEquals": {
+          "aws:ResourceAccount": [
+            "222222222222"
+          ]
+        }
+      }
+    }
+  ]
+}
+This policy uses a Deny effect to block access to Amazon S3 actions, unless the Amazon S3 resource that's being accessed is in account 222222222222. This ensures that any Amazon S3 principals are accessing only the resources that are inside of a trusted AWS account.
+
+
+
+IAM roles
+All right, so you've learned about IAM users, groups, and policies. Policies can be applied to AWS identities like users and groups to assign permissions. They also, however, can be applied to another AWS identity, IAM roles. An IAM role is an identity that can be assumed by someone or something who needs temporary access to AWS credentials. 
+IAM roles are identities in AWS that like an IAM user also have associated AWS credentials used to sign requests. However, IAM users have usernames and passwords as well as static credentials whereas IAM roles do not have any login credentials like a username and password and the credentials used to sign requests are programmatically acquired, temporary in nature, and automatically rotated. A role can be assumed by many different identities and they have many use cases. The important thing to know about roles is that the credentials they provide expire and roles are assumed programmatically.
+
+
+https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1720890000/6_W6AgtssnL6bKS1FN-TRA/tincan/7b5246b3e4dcf41ee9510fd1863163b18f6b0358/assets/XzQ6ItNPDmtH_jWs_WXZ1hMonELN5HDwI.png
+
+
