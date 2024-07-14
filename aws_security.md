@@ -479,7 +479,7 @@ AWS service endpoints: https://docs.aws.amazon.com/general/latest/gr/rande.html#
 
 Detection: https://docs.aws.amazon.com/wellarchitected/latest/security-pillar/detection.html
 
-AWS Security Documentation: https://docs.aws.amazon.com/security/
+AWS Security Documentation: 	https://docs.aws.amazon.com/security/
 
 Building a Cloud-Specific Incident Response Plan: https://aws.amazon.com/blogs/publicsector/building-a-cloud-specific-incident-response-plan/
 
