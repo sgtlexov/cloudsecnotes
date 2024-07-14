@@ -215,6 +215,130 @@ Amazon ECS runs on AWS native technology. Amazon EKS runs on Kubernetes.
 
 If you have containers running on Kubernetes and want an advanced orchestration solution that can provide simplicity, high availability, and fine-grained control over your infrastructure, Amazon EKS could be the tool for you.
 
+Introduction to Serverless
+ If you want to deploy your workloads and applications without having to manage any EC2 instances, you can do that on AWS with serverless compute.
+
+Go serverless
+
+
+With serverless compute, you can spend time on the things that differentiate your application, rather than spending time on ensuring availability, scaling, and managing servers. Every definition of serverless mentions the following four aspects:
+
+There are no servers to provision or manage.
+It scales with usage.
+You never pay for idle resources.
+Availability and fault tolerance are built in.
+AWS has developed serverless services for all three layers of the application stack.
+
+Exploring serverless containers with AWS Fargate
+
+Fargate abstracts the EC2 instance so that you’re not required to manage the underlying compute infrastructure. However, with Fargate, you can use all the same Amazon ECS concepts, APIs, and AWS integrations. It natively integrates with IAM and Amazon Virtual Private Cloud (Amazon VPC). With native integration with Amazon VPC, you can launch Fargate containers inside your network and control connectivity to your applications.
+
+
+Running code on AWS Lambda
+
+If you want to deploy your workloads and applications without having to manage any EC2 instances or containers, you can use Lambda.
+
+AWS Lambda icon.
+AWS Lambda
+
+With Lambda, you can run code without provisioning or managing servers. You can run code for virtually any type of application or backend service. This includes data processing, real-time stream processing, machine learning, WebSockets, IoT backends, mobile backends, and web applications like your employee directory application!
+
+Lambda runs your code on a high availability compute infrastructure and requires no administration from the user. You upload your source code in one of the languages that Lambda supports, and Lambda takes care of everything required to run and scale your code with high availability. There are no servers to manage. You get continuous scaling with subsecond metering and consistent performance.
+
+How Lambda works
+
+The Lambda function is the foundational principle of AWS Lambda. You have the option of configuring your Lambda functions using the Lambda console, Lambda API, AWS CloudFormation, or AWS Serverless Application Model (AWS SAM). You can invoke your function directly by using the Lambda API, or you can configure an AWS service or resource to invoke your function in response to an event.
+
+
+A function is a resource that you can invoke to run your code in Lambda. Lambda runs instances of your function to process events. When you create the Lambda function, it can be authored in several ways:
+
+You can create the function from scratch.
+You can use a blueprint that AWS provides.
+You can select a container image to deploy for your function.
+You can browse the AWS Serverless Application Repository. 
+
+
+Triggers describe when a Lambda function should run. A trigger integrates your Lambda function with other AWS services and event source mappings. So you can run your Lambda function in response to certain API calls or by reading items from a stream or queue. This increases your ability to respond to events in your console without having to perform manual actions. 
+
+
+An event is a JSON-formatted document that contains data for a Lambda function to process. The runtime converts the event to an object and passes it to your function code. When you invoke a function, you determine the structure and contents of the event.
+
+An application environment provides a secure and isolated runtime environment for your Lambda function. An application environment manages the processes and resources that are required to run the function. 
+
+You deploy your Lambda function code using a deployment package. Lambda supports two types of deployment packages:
+
+                   
+
+A .zip file archive – This contains your function code and its dependencies. Lambda provides the operating system and runtime for your function.
+
+A container image – This is compatible with the Open Container Initiative (OCI) specification. You add your function code and dependencies to the image. You must also include the operating system and a Lambda runtime.
+
+
+
+
+
+The runtime provides a language-specific environment that runs in an application environment. When you create your Lambda function, you specify the runtime that you want your code to run in. You can use built-in runtimes, such as Python, Node.js, Ruby, Go, Java, or .NET Core. Or you can implement your Lambda functions to run on a custom runtime.
+
+
+The AWS Lambda function handler is the method in your function code that processes events. When your function is invoked, Lambda runs the handler method. When the handler exits or returns a response, it becomes available to handle another event. 
+
+
+
+You can use the following general syntax when creating a function handler in Python.
+
+
+
+def handler_name (event, context):
+
+...
+
+return some_value
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -248,3 +372,10 @@ https://docs.aws.amazon.com/AmazonECS/latest/developerguide/create-capacity.html
 
 What is Amazon EKS?
 https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html
+
+
+Serverless on AWS:
+https://aws.amazon.com/serverless/#:~:text=Serverless%20is%20the%20native%20architecture,services%20without%20thinking%20about%20servers.
+
+Configuring AWS Lambda functions:
+https://docs.aws.amazon.com/lambda/latest/dg/lambda-functions.html
