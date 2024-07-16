@@ -647,6 +647,666 @@ Amazon FSx provides native compatibility with third-party file systems. You can 
 
 Amazon FSx file systems offer feature sets, performance profiles, and data management capabilities that support a wide variety of use cases and workloads. Examples include machine learning, analytics, high performance computing (HPC) applications, and media and entertainment.  
 
+Databases on AWS
+
+
+
+History behind enterprise databases
+
+Choosing a database used to be a straightforward decision. Customers had only a few options to choose from. Typically, they would consider a few vendors and then, inevitably, choose one for all their applications. Businesses often selected a database technology before they fully understood their use case. Since the 1970s, the database type most commonly selected by businesses was a relational database.
+
+Relational databases
+
+A relational database organizes data into tables. Data in one table can link to data in other tables to create relationships—hence, the relational part of the name.
+
+A table stores data in rows and columns. A row, often called a record, contains all information about a specific entry. Columns describe attributes of an entry. The following image is an example of three tables in a relational database.
+
+https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1721142000/DYJ0WCj3ky3Ql5Cq38_M9g/tincan/7b5246b3e4dcf41ee9510fd1863163b18f6b0358/assets/OLsaStAvUCWO8Qnp_2LDugnFFKSyS9mOy.png
+
+
+The preceding image shows a table for books, a table for sales, and a table for authors. In the books table, each row includes the International Standard Book Number (ISBN), title, author, and format. Each of these attributes is stored in its own column. The books table has something in common with the other two tables—the author attribute. That common column creates a relationship between the tables.
+
+The tables, rows, columns, and relationships between them is called a logical schema. With relational databases, a schema is fixed. After the database is operational, it becomes difficult to change the schema. Because of this, most of the data modeling is done up front before the database is active.
+
+Relational database management system
+
+With a relational database management system (RDBMS), you can create, update, and administer a relational database. Some common examples of RDBMSs include the following:
+
+MySQL
+PostgresQL
+Oracle
+Microsoft SQL Server
+Amazon Aurora
+You communicate with an RDBMS by using structured query language (SQL) queries, similar to the following example:
+
+SELECT * FROM table_name.
+
+This query selects all the data from a particular table. However, the power of SQL queries is in creating more complex queries that pull data from several tables to identify patterns and answers to business problems. For example, querying the sales table and the books table together to see sales in relation to an author’s books. Querying tables together to better understand their relationships is made possible by a "join".
+
+Relational database benefits
+
+To learn more about the benefits of using relational databases, flip each of the following flashcards by choosing them. 
+
+
+
+Relational database benefits
+
+To learn more about the benefits of using relational databases, flip each of the following flashcards by choosing them. 
+
+Front of card
+Complex SQL
+
+
+Click to flip
+Back of card
+With SQL, you can join multiple tables so you can better understand relationships between your data.
+
+
+Click to flip
+Front of card
+Reduced redundancy
+
+
+Click to flip
+Back of card
+You can store data in one table and reference it from other tables instead of saving the same data in different places.
+
+
+Click to flip
+Front of card
+Familiarity
+
+
+Click to flip
+Back of card
+Because relational databases have been a popular choice since the 1970s, technical professionals often have familiarity and experience with them.
+
+
+Click to flip
+Front of card
+Accuracy
+
+
+Click to flip
+Back of card
+Relational databases ensure that your data has high integrity and adheres to the atomicity, consistency, isolation, and durability (ACID) principle.
+
+
+Click to flip
+Relational database use cases
+
+Much of the world runs on relational databases. In fact, they’re at the core of many mission-critical applications, some of which you might use in your day-to-day life.
+
+To learn some common use cases for relational databases, expand each of the following two categories.
+
+To learn some common use cases for relational databases, expand each of the following two categories.
+
+
+Applications that have a fixed schema
+–
+These are applications that have a fixed schema and don't change often. An example is a lift-and-shift application that lifts an app from on-premises and shifts it to the cloud, with little or no modifications.
+
+
+Applications that need persistent storage
+–
+These are applications that need persistent storage and follow the ACID principle, such as:
+
+Enterprise resource planning (ERP) applications
+Customer relationship management (CRM) applications
+Commerce and financial applications
+Choose between unmanaged and managed databases
+
+If you want to trade your on-premises database for a relational database on AWS, you first need to select how you want to run it—managed or unmanaged. Managed services and unmanaged services are handled similar to the shared responsibility model. The shared responsibility model distinguishes between AWS security responsibilities and the customer’s security responsibilities. Likewise, managed compared to unmanaged can be understood as a trade-off between convenience and control.
+
+Unmanaged databases
+
+If you operate a relational database on premises, you are responsible for all aspects of operation. This includes data center security and electricity, host machines management, database management, query optimization, and customer data management. You are responsible for absolutely everything, which means you have control over absolutely everything.
+
+Now, suppose you want to shift some of the work to AWS by running your relational database on Amazon Elastic Compute Cloud (Amazon EC2). If you host a database on Amazon EC2, AWS implements and maintains the physical infrastructure and hardware and installs the EC2 instance operating system (OS). However, you are still responsible for managing the EC2 instance, managing the database on that host, optimizing queries, and managing customer data.
+
+This is called an unmanaged database option. In this option, AWS is responsible for and has control over the hardware and underlying infrastructure. You are responsible for and have control over management of the host and database.
+
+
+https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1721142000/DYJ0WCj3ky3Ql5Cq38_M9g/tincan/7b5246b3e4dcf41ee9510fd1863163b18f6b0358/assets/tCWAW7N_ulNvnDIJ_qnA3DCLuIj69t7zG.png
+
+You are responsible for everything in a database hosted on-premises. AWS takes on more of that responsibility in databases hosted in Amazon EC2.
+
+Managed databases
+
+To shift more of the work to AWS, you can use a managed database service. These services provide the setup of both the EC2 instance and the database, and they provide systems for high availability, scalability, patching, and backups. However, in this model, you’re still responsible for database tuning, query optimization, and ensuring that your customer data is secure. This option provides the ultimate convenience but the least amount of control compared to the two previous options.
+
+https://explore.skillbuilder.aws/files/a/w/aws_prod1_docebosaas_com/1721142000/DYJ0WCj3ky3Ql5Cq38_M9g/tincan/7b5246b3e4dcf41ee9510fd1863163b18f6b0358/assets/OSKho6F8uXYdN76j_AOuKIausIFuSmauW.png
+
+
+Amazon RDS overview
+
+Amazon RDS icon
+Amazon Relational Database Service (Amazon RDS)
+
+Amazon RDS is a managed database service customers can use to create and manage relational databases in the cloud without the operational burden of traditional database management. For example, imagine you sell healthcare equipment, and your goal is to be the number-one seller on the West Coast of the United States. Building a database doesn’t directly help you achieve that goal. However, having a database is a necessary component to achieving that goal. 
+
+With Amazon RDS, you can offload some of the unrelated work of creating and managing a database. You can focus on the tasks that differentiate your application, instead of focusing on infrastructure-related tasks, like provisioning, patching, scaling, and restoring.
+
+Amazon RDS supports most of the popular RDBMSs, ranging from commercial options to open-source options and even a specific AWS option. Supported Amazon RDS engines include the following:
+
+Commercial: Oracle, SQL Server
+Open source: MySQL, PostgreSQL, MariaDB
+Cloud native: Aurora 
+
+
+Database instances
+
+Just like the databases you build and manage yourself, Amazon RDS is built from compute and storage. The compute portion is called the database (DB) instance, which runs the DB engine. Depending on the engine selected, the instance will have different supported features and configurations. A DB instance can contain multiple databases with the same engine, and each DB can contain multiple tables.
+
+Underneath the DB instance is an EC2 instance. However, this instance is managed through the Amazon RDS console instead of the Amazon EC2 console. When you create your DB instance, you choose the instance type and size. The DB instance class you choose affects how much processing power and memory it has.
+
+
+Storage on Amazon RDS
+
+The storage portion of DB instances for Amazon RDS use Amazon Elastic Block Store (Amazon EBS) volumes for database and log storage. This includes MySQL, MariaDB, PostgreSQL, Oracle, and SQL Server. 
+
+When using Aurora, data is stored in cluster volumes, which are single, virtual volumes that use solid-state drives (SSDs). A cluster volume contains copies of your data across three Availability Zones in a single AWS Region. For nonpersistent, temporary files, Aurora uses local storage.
+
+Amazon RDS provides three storage types: General Purpose SSD (also called gp2 and gp3), Provisioned IOPS SSD (also called io1), and Magnetic (also called standard). They differ in performance characteristics and price, which means you can tailor your storage performance and cost to the needs of your database workload.
+
+
+Amazon RDS in an Amazon Virtual Private Cloud
+
+When you create a DB instance, you select the Amazon Virtual Private Cloud (Amazon VPC) your databases will live in. Then, you select the subnets that will be designated for your DB. This is called a DB subnet group, and it has at least two Availability Zones in its Region. The subnets in a DB subnet group should be private, so they don’t have a route to the internet gateway. This ensures that your DB instance, and the data inside it, can be reached only by the application backend.
+
+Access to the DB instance can be restricted further by using network access control lists (network ACLs) and security groups. With these firewalls, you can control, at a granular level, the type of traffic you want to provide access into your database.
+
+Using these controls provides layers of security for your infrastructure. It reinforces that only the backend instances have access to the database.
+
+Backup data
+
+You don’t want to lose your data. To take regular backups of your Amazon RDS instance, you can use automated backups or manual snapshots. To learn about a category, choose the appropriate tab.
+
+Automated backups are turned on by default. This backs up your entire DB instance (not just individual databases on the instance) and your transaction logs. When you create your DB instance, you set a backup window that is the period of time that automatic backups occur. Typically, you want to set the window during a time when your database experiences little activity because it can cause increased latency and downtime.
+
+Retaining backups: Automated backups are retained between 0 and 35 days. You might ask yourself, “Why set automated backups for 0 days?” The 0 days setting stops automated backups from happening. If you set it to 0, it will also delete all existing automated backups. This is not ideal. The benefit of automated backups that you can do point-in-time recovery.
+
+
+
+Point-in-time recovery: This creates a new DB instance using data restored from a specific point in time. This restoration method provides more granularity by restoring the full backup and rolling back transactions up to the specified time range.
+
+If you want to keep your automated backups longer than 35 days, use manual snapshots. Manual snapshots are similar to taking Amazon EBS snapshots, except you manage them in the Amazon RDS console. These are backups that you can initiate at any time. They exist until you delete them. For example, to meet a compliance requirement that mandates you to keep database backups for a year, you need to use manual snapshots. If you restore data from a manual snapshot, it creates a new DB instance using the data from the snapshot.
+
+
+Choosing a backup option
+
+It is advisable to deploy both backup options. Automated backups are beneficial for point-in-time recovery. With manual snapshots, you can retain backups for longer than 35 days. 
+
+Redundancy with Amazon RDS Multi-AZ
+
+In an Amazon RDS Multi-AZ deployment, Amazon RDS creates a redundant copy of your database in another Availability Zone. You end up with two copies of your database—a primary copy in a subnet in one Availability Zone and a standby copy in a subnet in a second Availability Zone.
+
+The primary copy of your database provides access to your data so that applications can query and display the information. The data in the primary copy is synchronously replicated to the standby copy. The standby copy is not considered an active database, and it does not get queried by applications.
+
+Diagram depicting Amazon RDS Multi-AZ creating a redundant copy of a database in another Availability Zone.
+To improve availability, Amazon RDS Multi-AZ ensures that you have two copies of your database running and that one of them is in the primary role. If an availability issue arises, such as the primary database loses connectivity, Amazon RDS initiates an automatic failover.
+
+When you create a DB instance, a Domain Name System (DNS) name is provided. AWS uses that DNS name to fail over to the standby database. In an automatic failover, the standby database is promoted to the primary role, and queries are redirected to the new primary database.
+
+To help ensure that you don't lose Multi-AZ configuration, there are two ways you can create a new standby database. They are as follows:
+
+Demote the previous primary to standby if it's still up and running.
+Stand up a new standby DB instance.
+The reason you can select multiple subnets for an Amazon RDS database is because of the Multi-AZ configuration. You will want to ensure that you have subnets in different Availability Zones for your primary and standby copies.
+
+Amazon RDS security
+
+When it comes to security in Amazon RDS, you have control over managing access to your Amazon RDS resources, such as your databases on a DB instance. How you manage access will depend on the tasks you or other users need to perform in Amazon RDS. Network ACLs and security groups help users dictate the flow of traffic. If you want to restrict the actions and resources others can access, you can use AWS Identity and Access Management (IAM) policies. 
+
+
+Purpose-built databases for all application needs
+
+We covered Amazon RDS and relational databases in the previous lesson, and for a long time, relational databases were the default option. They were widely used in nearly all applications. A relational database is like a multi-tool. It can do many things, but it is not perfectly suited to any one particular task. It might not always be the best choice for your business needs. 
+
+The one-size-fits-all approach of using a relational database for everything no longer works. Over the past few decades, there has been a shift in the database landscape, and this shift has led to the rise of purpose-built databases. Developers can consider the needs of their application and choose a database that will fit those needs. 
+
+AWS offers a broad and deep portfolio of purpose-built databases that support diverse data models. Customers can use them to build data-driven, highly scalable, distributed applications. You can pick the best database to solve a specific problem and break away from restrictive commercial databases. You can focus on building applications that meet the needs of your organization.
+
+DynamoDB overview
+
+DynamoDB is a fully managed NoSQL database service that provides fast and predictable performance with seamless scalability. With DynamoDB, you can offload the administrative burdens of operating and scaling a distributed database. You don't need to worry about hardware provisioning, setup and configuration, replication, software patching, or cluster scaling.
+
+Amazon DynamoDB icon.
+Amazon DynamoDB
+
+With DynamoDB, you can do the following:
+
+Create database tables that can store and retrieve any amount of data and serve any level of request traffic. 
+Scale up or scale down your tables' throughput capacity without downtime or performance degradation. 
+Monitor resource usage and performance metrics using the AWS Management Console.
+DynamoDB automatically spreads the data and traffic for your tables over a sufficient number of servers to handle your throughput and storage requirements. It does this while maintaining consistent, fast performance. All your data is stored on SSDs and is automatically replicated across multiple Availability Zones in a Region, providing built-in high availability and data durability.
+
+DynamoDB core components
+
+In DynamoDB, tables, items, and attributes are the core components that you work with. A table is a collection of items, and each item is a collection of attributes. DynamoDB uses primary keys to uniquely identify each item in a table and secondary indexes to provide more querying flexibility.
+
+To learn more, choose each of the three numbered markers.  
+
+
+
+
+DynamoDB use cases
+
+DynamoDB is a fully managed service that handles the operations work. You can offload the administrative burdens of operating and scaling distributed databases to AWS.
+
+You might want to consider using DynamoDB in the following circumstances:
+
+
+bullet
+You are experiencing scalability problems with other traditional database systems.
+
+
+bullet
+You are actively engaged in developing an application or service.
+
+
+bullet
+You are working with an OLTP workload.
+
+
+bullet
+You care deploying a mission-critical application that must be highly available at all times without manual intervention.
+
+
+bullet
+You require a high level of data durability, regardless of your backup-and-restore strategy.
+
+DynamoDB is used in a wide range of workloads because of its simplicity, from low-scale operations to ultrahigh-scale operations, such as those demanded by Amazon.com. 
+
+To learn more about potential use cases, expand each of the following four categories.
+
+To learn more about potential use cases, expand each of the following four categories.
+
+
+Develop software applications
+–
+Build internet-scale applications supporting user-content metadata and caches that require high concurrency and connections for millions of users and millions of requests per second.
+
+
+Create media metadata stores
+–
+Scale throughput and concurrency for analysis of media and entertainment workloads, such as real-time video streaming and interactive content. Deliver lower latency with multi-Region replication across Regions.
+
+
+Scale gaming platforms
+–
+Focus on driving innovation with no operational overhead. Build out your game platform with player data, session history, and leaderboards for millions of concurrent users.
+
+
+Deliver seamless retail experiences
+–
+Use design patterns for deploying shopping carts, workflow engines, inventory tracking, and customer profiles. DynamoDB supports high-traffic, extreme-scaled events and can handle millions of queries per second.
+
+
+DynamoDB security
+
+DynamoDB provides a number of security features to consider as you develop and implement your own security policies. They include the following:
+
+
+bullet
+DynamoDB provides a highly durable storage infrastructure designed for mission-critical and primary data storage. Data is redundantly stored on multiple devices across multiple facilities in a DynamoDB Region.  
+
+
+bullet
+All user data stored in DynamoDB is fully encrypted at rest. DynamoDB encryption at rest provides enhanced security by encrypting all your data at rest using encryption keys stored in AWS Key Management Service (AWS KMS).
+
+
+bullet
+IAM administrators control who can be authenticated and authorized to use DynamoDB resources. You can use IAM to manage access permissions and implement security policies.
+
+
+bullet
+As a managed service, DynamoDB is protected by the AWS global network security procedures.
+
+
+
+
+
+
+
+
+https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html
+
+
+
+Choose the database service that is the best fit for the job to help you optimize scale, performance, and costs when designing applications.
+
+
+AWS database services
+
+As we learned in the previous lessons, AWS has a variety of database options for different use cases. The following table provides a quick look at the AWS database portfolio.
+
+Breaking up applications and databases
+
+As the industry changes, applications and databases change too. Today, with larger applications, you no longer see just one database supporting them. Instead, applications are broken into smaller services, each with its own purpose-built database supporting it. This shift removes the idea of a one-size-fits-all database and replaces it with a complimentary database strategy. You can give each database the appropriate functionality, performance, and scale the workload requires.
+
+
+Monitoring
+Purpose of monitoring
+
+When operating a website like the employee directory application on AWS, you might have questions like the following:
+
+How many people are visiting my site day to day?
+How can I track the number of visitors over time?
+How will I know if the website is having performance or availability issues?
+What happens if my Amazon Elastic Compute Cloud (Amazon EC2) instance runs out of capacity?
+Will I be alerted if my website goes down?
+You need a way to collect and analyze data about the operational health and usage of your resources. The act of collecting, analyzing, and using data to make decisions or answer questions about your IT resources and systems is called monitoring.
+
+Monitoring provides a near real-time pulse on your system and helps answer the previous questions. You can use the data you collect to watch for operational issues caused by events like overuse of resources, application flaws, resource misconfiguration, or security-related events. Think of the data collected through monitoring as outputs of the system, or metrics.
+
+Use metrics to solve problems
+
+The AWS resources that host your solutions create various forms of data that you might be interested in collecting. Each individual data point that a resource creates is a metric. Metrics that are collected and analyzed over time become statistics, such as average CPU utilization over time showing a spike.
+
+Graph depicting a spike in CPU utilization.
+One way to evaluate the health of an EC2 instance is through CPU utilization. Generally speaking, if an EC2 instance has a high CPU utilization, it can mean a flood of requests. Or it can reflect a process that has encountered an error and is consuming too much of the CPU. When analyzing CPU utilization, take a process that exceeds a specific threshold for an unusual length of time. Use that abnormal event as a cue to either manually or automatically resolve the issue through actions like scaling the instance.
+
+CPU utilization is one example of a metric. Other examples of metrics that EC2 instances have are network utilization, disk performance, memory utilization, and the logs created by the applications running on top of Amazon EC2.
+
+Types of metrics
+
+Different resources in AWS create different types of metrics. To see examples of metrics associated with different resources, flip each of the following flashcards by choosing them. 
+
+Amazon Simple Storage Service (Amazon S3) metrics
+Size of objects stored in a bucket
+Number of objects stored in a bucket
+Number of HTTP request made to a bucket
+
+Amazon Relational Database Service (Amazon RDS) metrics
+
+
+
+Database connections
+CPU utilization of an instance
+Disk space consumption
+
+
+Amazon EC2 metrics
+CPU utilization
+Network utilization
+Disk performance
+Status checks
+
+This is not a complete list of metrics for any of the services mentioned, but you can see how different resources create different metrics. You might be interested in a wide variety of metrics depending on your resources, goals, and questions.
+
+Monitoring benefits
+
+Monitoring gives you visibility into your resources, but the question now is, "Why is that important?" This section describes some of the benefits of monitoring.
+
+To learn more, expand each of the following five categories.
+
+
+Respond proactively
+–
+Respond to operational issues proactively before your end users are aware of them. Waiting for end users to let you know when your application is experiencing an outage is a bad practice. Through monitoring, you can keep tabs on metrics like error response rate and request latency. Over time, the metrics help signal when an outage is going to occur. You can automatically or manually perform actions to prevent the outage from happening and fix the problem before your end users are aware of it.
+
+
+Improve performance and reliability
+–
+Monitoring can improve the performance and reliability of your resources. Monitoring the various resources that comprise your application provides you with a full picture of how your solution behaves as a system. Monitoring, if done well, can illuminate bottlenecks and inefficient architectures. This helps you drive performance and improve reliability.
+
+
+Recognize security threats and events
+–
+By monitoring, you can recognize security threats and events. When you monitor resources, events, and systems over time, you create what is called a baseline. A baseline defines normal activity. Using a baseline, you can spot anomalies like unusual traffic spikes or unusual IP addresses accessing your resources. When an anomaly occurs, an alert can be sent out or an action can be taken to investigate the event.
+
+
+Make data-driven decisions
+–
+Monitoring helps you make data-driven decisions for your business. Monitoring keeps an eye on IT operational health and drives business decisions. For example, suppose you launched a new feature for your cat photo app and now you want to know if it’s being used. You can collect application-level metrics and view the number of users who use the new feature. With your findings, you can decide whether to invest more time into improving the new feature.
+
+
+Create cost-effective solutions
+–
+Through monitoring, you can create more cost-effective solutions. You can view resources that are underused and rightsize your resources to your usage. This helps you optimize cost and make sure you aren’t spending more money than necessary.
+
+
+Amazon CloudWatch
+
+Visibility using CloudWatch
+
+AWS resources create data that you can monitor through metrics, logs, network traffic, events, and more. This data comes from components that are distributed in nature. This can lead to difficulty in collecting the data you need if you don’t have a centralized place to review it all. AWS has taken care of centralizing the data collection for you with a service called CloudWatch.
+
+Amazon CloudWatch icon.
+Amazon CloudWatch
+
+CloudWatch is a monitoring and observability service that collects your resource data and provides actionable insights into your applications. With CloudWatch, you can respond to system-wide performance changes, optimize resource usage, and get a unified view of operational health.
+
+You can use CloudWatch to do the following:
+
+
+bullet
+Detect anomalous behavior in your environments.
+
+
+bullet
+Set alarms to alert you when something is not right.
+
+
+bullet
+Visualize logs and metrics with the AWS Management Console.
+
+
+bullet
+Take automated actions like scaling.
+
+
+bullet
+Troubleshoot issues.
+
+
+bullet
+Discover insights to keep your applications healthy.
+
+How CloudWatch works
+
+With CloudWatch, all you need to get started is an AWS account. It is a managed service that you can use for monitoring without managing the underlying infrastructure.
+
+
+
+
+
+
+
+
+The employee directory application is built with various AWS services working together as building blocks. Monitoring the individual services independently can be challenging. Fortunately, CloudWatch acts as a centralized place where metrics are gathered and analyzed. 
+
+
+Many AWS services automatically send metrics to CloudWatch for free at a rate of 1 data point per metric per 5-minute interval. This is called basic monitoring, and it gives you visibility into your systems without any extra cost. For many applications, basic monitoring is adequate.
+
+For applications running on EC2 instances, you can get more granularity by posting metrics every minute instead of every 5-minutes using a feature like detailed monitoring. Detailed monitoring incurs a fee. For more information about pricing, see "Amazon CloudWatch Pricing" in the Resources section at the end of this lesson.
+
+
+CloudWatch concepts
+
+Metrics are the fundamental concept in CloudWatch. A metric represents a time-ordered set of data points that are published to CloudWatch. Think of a metric as a variable to monitor and the data points as representing the values of that variable over time. Every metric data point must be associated with a timestamp.
+
+To learn more, choose each numbered marker.
+
+
+
+
+
+AWS services that send data to CloudWatch attach dimensions to each metric. A dimension is a name and value pair that is part of the metric’s identity. You can use dimensions to filter the results that CloudWatch returns. For example, many Amazon EC2 metrics publish InstanceId as a dimension name and the actual instance ID as the value for that dimension.
+
+Screenshot depicting the metrics and dimensions used to filter the results that CloudWatch returns.
+By default, many AWS services provide metrics at no charge for resources such as EC2 instances, Amazon Elastic Block Store (Amazon EBS) volumes, and Amazon RDS database (DB) instances. For a charge, you can activate features such as detailed monitoring or publishing your own application metrics on resources such as your EC2 instances. 
+
+Custom metrics
+
+Suppose you have an application, and you want to record the number of page views your website gets. How would you record this metric with CloudWatch? First, it's an application-level metric. That means it’s not something the EC2 instance would post to CloudWatch by default. This is where custom metrics come in. With custom metrics, you can publish your own metrics to CloudWatch.
+
+If you want to gain more granular visibility, you can use high-resolution custom metrics, which make it possible for you to collect custom metrics down to a 1-second resolution. This means you can send 1 data point per second per custom metric.
+
+Some examples of custom metrics include the following:
+
+
+bullet
+Webpage load times
+
+
+bullet
+Request error rates
+
+
+bullet
+Number of processes or threads on your instance
+
+
+bullet
+Amount of work performed by your application
+
+CloudWatch dashboards
+
+Once you provision your AWS resources and they are sending metrics to CloudWatch, you can visualize and review that data using CloudWatch dashboards. Dashboards are customizable home pages you can configure for data visualization for one or more metrics through widgets, such as a graph or text.
+
+You can build many custom dashboards, each one focusing on a distinct view of your environment. You can even pull data from different AWS Regions into a single dashboard to create a global view of your architecture. The following screenshot an example of a dashboard with metrics from Amazon EC2 and Amazon EBS.
+
+Screenshot of a CloudWatch dashboard used to create customized views of the metrics and alarms for AWS resources.
+CloudWatch aggregates statistics according to the period of time that you specify when creating your graph or requesting your metrics. You can also choose whether your metric widgets display live data. Live data is data published within the last minute that has not been fully aggregated.
+
+You are not bound to using CloudWatch exclusively for all your visualization needs. You can use external or custom tools to ingest and analyze CloudWatch metrics using the GetMetricData API.
+
+As far as security is concerned, with AWS Identity and Access Management (IAM) policies, you control who has access to view or manage your CloudWatch dashboards.
+
+Amazon CloudWatch Logs
+
+CloudWatch Logs is centralized place for logs to be stored and analyzed. With this service, you can monitor, store, and access your log files from applications running on EC2 instances, AWS Lambda functions, and other sources.
+
+Screenshot of CloudWatch Logs with centralized logs from all systems, applications, and AWS services in a single service.
+With CloudWatch Logs, you can query and filter your log data. For example, suppose you’re looking into an application logic error for your application. You know that when this error occurs, it will log the stack trace. Because you know it logs the error, you query your logs in CloudWatch Logs to find the stack trace. You also set up metric filters on logs, which turn log data into numerical CloudWatch metrics that you can graph and use on your dashboards.
+
+Some services, like Lambda, are set up to send log data to CloudWatch Logs with minimal effort. With Lambda, all you need to do is give the Lambda function the correct IAM permissions to post logs to CloudWatch Logs. Other services require more configuration. For example, to send your application logs from an EC2 instance into CloudWatch Logs, you need to install and configure the CloudWatch Logs agent on the EC2 instance. With the CloudWatch Logs agent, EC2 instances can automatically send log data to CloudWatch Logs.
+
+CloudWatch Logs terminology
+
+Log data sent to CloudWatch Logs can come from different sources, so it’s important you understand how they’re organized. 
+
+To learn more about logs terminology, choose each of the three numbered markers.
+
+
+
+
+
+
+
+
+CloudWatch alarms
+
+You can create CloudWatch alarms to automatically initiate actions based on sustained state changes of your metrics. You configure when alarms are invoked and the action that is performed.
+
+First, you must decide which metric you want to set up an alarm for, and then you define the threshold that will invoke the alarm. Next, you define the threshold's time period. For example, suppose you want to set up an alarm for an EC2 instance to invoke when the CPU utilization goes over a threshold of 80 percent. You also must specify the time period the CPU utilization is over the threshold. 
+
+You don’t want to invoke an alarm based on short, temporary spikes in the CPU. You only want to invoke an alarm if the CPU is elevated for a sustained amount of time. For example, if CPU utilization exceeds 80 percent for 5 minutes or longer, there might be a resource issue. To set up an alarm you need to choose the metric, threshold, and time period.
+
+Screenshot depicting how to specify the metric and the conditions in CloudWatch.
+An alarm can be invoked when it transitions from one state to another. After an alarm is invoked, it can initiate an action. Actions can be an Amazon EC2 action, an automatic scaling action, or a notification sent to Amazon Simple Notification Service (Amazon SNS).
+
+To learn more about the three possible states of an alarm, flip each of the following flashcards by choosing them. 
+
+Front of card
+OK
+
+
+Click to flip
+Back of card
+The metric is within the defined threshold. Everything appears to be operating like normal.
+
+
+Click to flip
+Front of card
+ALARM
+
+
+Click to flip
+Back of card
+The metric is outside the defined threshold. This might be an operational issue.
+
+
+Click to flip
+Front of card
+INSUFFICIENT_DATA
+
+
+Click to flip
+Back of card
+The alarm has just started, the metric is not available, or not enough data is available for the metric to determine the alarm state.
+
+
+Click to flip
+Prevent and troubleshoot issues with CloudWatch alarms
+
+CloudWatch Logs uses metric filters to turn the log data into metrics that you can graph or set an alarm on. The following timeline indicates the order of the steps to complete when setting up an alarm. It also provides an example using our employee directory application.
+
+1
+Set up a metric filter
+For the employee directory application, suppose you set up a metric filter for HTTP 500 error response codes. 
+
+2
+Define an alarm
+Then, you define which metric alarm state should be invoked based on the threshold. With this example, the alarm state is invoked if HTTP 500 error responses are sustained for a specified period of time.
+
+3
+Define an action
+Next, you define an action that you want to take place when the alarm is invoked. Here, it makes sense to send an email or text alert to you so you can start troubleshooting the website. Hopefully, you can fix it before it becomes a bigger issue.
+
+
+
+After the alarm is set up, you know that if the error happens again, you will be notified promptly.
+
+You can set up different alarms for different reasons to help you prevent or troubleshoot operational issues. In the scenario just described, the alarm invokes an Amazon SNS notification that goes to a person who looks into the issue manually. 
+
+Another option is to have alarms invoke actions that automatically remediate technical issues. For example, you can set up an alarm to invoke an EC2 instance to reboot or scale services up or down. You can even set up an alarm to invoke an Amazon SNS notification that invokes a Lambda function. The Lambda function then calls any AWS API to manage your resources and troubleshoot operational issues. By using AWS services together like this, you can respond to events more quickly.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring_best_practices.html
+
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring_ec2.html
+https://docs.aws.amazon.com/AmazonS3/latest/userguide/monitoring-overview.html
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Monitoring.html
+
+
+
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_RDS_Configuring.html
+
+https://docs.aws.amazon.com//AmazonRDS/latest/UserGuide/UsingWithRDS.html
+
+https://aws.amazon.com/products/databases/
+
+
+https://aws.amazon.com/relational-database/
+
+
+
+
+https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/GettingStarted.html
+
+
+
+
+
+
+
+
+
 
 
 
